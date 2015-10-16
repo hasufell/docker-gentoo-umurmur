@@ -31,5 +31,6 @@ done
 
 unset i
 
-
-cat /umurmurconfig/channels.conf >> /etc/umurmur/umurmur.conf
+if ! grep -E '^channels =.*' /etc/umurmur/umurmur.conf ; then
+	cat /umurmurconfig/channels.conf >> /etc/umurmur/umurmur.conf
+fi
