@@ -3,7 +3,7 @@
 set -e
 
 # strings
-for i in welcometext certificate private_key password \
+for i in welcometext certificate private_key ca_path password \
 		admin_password banfile bindaddr bindaddr6 logfile \
 		username groupname; do
 	if [[ ${!i} ]] ; then
