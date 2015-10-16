@@ -10,6 +10,7 @@ for i in welcometext certificate private_key ca_path password \
 		sed -i \
 			-e "s|${i} = .*|${i} = \"${!i}\";|" \
 			-e "s|# ${i} = .*|${i} = \"${!i}\";|" \
+			-e "s|#${i} = .*|${i} = \"${!i}\";|" \
 			/etc/umurmur/umurmur.conf
 	fi
 done
@@ -23,6 +24,7 @@ for i in max_bandwidth ban_length enable_ban sync_banfile allow_textmessage \
 		sed -i \
 			-e "s|${i} = .*|${i} = ${!i};|" \
 			-e "s|# ${i} = .*|${i} = ${!i};|" \
+			-e "s|#${i} = .*|${i} = ${!i};|" \
 			/etc/umurmur/umurmur.conf
 	fi
 done
