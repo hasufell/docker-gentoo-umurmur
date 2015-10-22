@@ -30,4 +30,4 @@ COPY ./config/supervisord.conf /etc/supervisord.conf
 
 EXPOSE 64738
 
-CMD /setup.sh && /usr/bin/supervisord -n -c /etc/supervisord.conf
+CMD /setup.sh && exec /usr/bin/supervisord -n -c /etc/supervisord.conf
